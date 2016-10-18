@@ -1,6 +1,6 @@
 {
     "appSecret": "",
     "pageAccessToken": "",
-    "validationToken": "",
+    "validationToken": "zorigt_verify",
     "serverURL": ""
 }
