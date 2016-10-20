@@ -450,7 +450,7 @@ function sendPrimaryMessage(recipientId) {
       id: recipientId
     },
     message: {
-      text: "What are you feeling right now?",
+      text: "What are you feeling right now?\n > Happy\n > Sad\n > Angry\n > Disgust\n > Fear\n > Surprise",
       quick_replies: [
         {
           "content_type":"text",
@@ -489,7 +489,7 @@ function sendPrimary2Message(recipientId) {
       id: recipientId
     },
     message: {
-      text: "What are you feeling right now?",
+      text: "What are you feeling right now?\n > Happy\n > Sad\n > Angry\n > Disgust\n > Fear\n > Surprise",
       quick_replies: [
         {
         "content_type":"text",
@@ -533,7 +533,7 @@ function happySecondaryMessage(recipientId) {
       id: recipientId
     },
     message: {
-      text: "How happy are you?",
+      text: "How happy are you?\n - Optimistic\n - Intimate\n - Peaceful\n - Powerful\n - Accepted\n - Proud\n - Interested\n - Joyful",
       quick_replies: [
         {
           "content_type":"text",
@@ -569,7 +569,7 @@ function happySecondary2Message(recipientId) {
       id: recipientId
     },
     message: {
-      text: "How happy are you?",
+      text: "How happy are you?\n - Optimistic\n - Intimate\n - Peaceful\n - Powerful\n - Accepted\n - Proud\n - Interested\n - Joyful",
       quick_replies: [
         {
         "content_type":"text",
@@ -605,7 +605,7 @@ function happySecondary3Message(recipientId) {
       id: recipientId
     },
     message: {
-      text: "How happy are you?",
+      text: "How happy are you?\n - Optimistic\n - Intimate\n - Peaceful\n - Powerful\n - Accepted\n - Proud\n - Interested\n - Joyful",
       quick_replies: [
         {
         "content_type":"text",
