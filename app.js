@@ -445,7 +445,7 @@ function sendPrimaryMessage(recipientId) {
         {
           "content_type":"text",
           "title":"Next",
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN",
+          "payload":"next",
           "image_url":"https://cdn0.iconfinder.com/data/icons/simple-outlines-1/100/Next-512.png"
         }
       ]
