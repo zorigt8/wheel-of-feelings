@@ -436,22 +436,7 @@ function sendPrimaryMessage(recipientId) {
           "content_type":"text",
           "title":"Disgust",
           "payload":"disgust"
-        }
-      ]
-    }
-  };
-
-  callSendAPI(messageData);
-}
-
-function sendPrimary2Message(recipientId) {
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      text: "What are you feeling right now?",
-      quick_replies: [
+        },
         {
           "content_type":"text",
           "title":"Anger",
@@ -473,6 +458,7 @@ function sendPrimary2Message(recipientId) {
 
   callSendAPI(messageData);
 }
+
 
 /*
  * Send an image using the Send API.
