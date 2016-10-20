@@ -450,7 +450,7 @@ function sendPrimaryMessage(recipientId) {
       id: recipientId
     },
     message: {
-      text: "What are you feeling right now?\n :) - Happy\n :( - Sad\n >:( - Angry\n >=P - Disgust\n =O - Fear\n :D - Surprise",
+      text: "What are you feeling right now?\n :) - Happy\n :( - Sad\n 😡 - Angry\n >=P - Disgust\n =O - Fear\n :D - Surprise",
       quick_replies: [
         {
           "content_type":"text",
@@ -464,7 +464,7 @@ function sendPrimaryMessage(recipientId) {
         },
         {
           "content_type":"text",
-          "title":">:(",
+          "title":"😡",
           "payload":"angry",
         },
         {
