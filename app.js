@@ -432,7 +432,9 @@ function sendPrimaryMessage(recipientId) {
                 "type":"web_url",
                 "url":"https://google.com",
                 "title":"Select Criteria",
-                "webview_height_ratio": "tall"
+                "webview_height_ratio": "tall",
+                "messenger_extensions": true,
+                "fallback_url": "https://yahoo.com"  
               }
             ]
           }]
