@@ -246,7 +246,9 @@ function receivedMessage(event) {
       messageId, quickReplyPayload);
 
     sendTextMessage(senderID, "Quick reply tapped");
-    sendPrimary2Message(senderID);
+    if (quickReplyPayload == "next") {
+        sendPrimary2Message(senderID);
+      }
     return;
   }
 
@@ -453,7 +455,7 @@ function sendPrimaryMessage(recipientId) {
   callSendAPI(messageData);
 }
 
-function sendPrimaryMessage(recipientId) {
+function sendPrimary2Message(recipientId) {
   var messageData = {
     recipient: {
       id: recipientId
