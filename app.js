@@ -450,17 +450,17 @@ function sendPrimaryMessage(recipientId) {
       id: recipientId
     },
     message: {
-      text: "What are you feeling right now?\n :) - Happy\n :( - Sad\n 😡 - Angry\n >=P - Disgust\n =O - Fear\n :D - Surprise",
+      text: "What are you feeling right now?\n 😊 - Happy\n 😞 - Sad\n 😡 - Angry\n 😒- Disgust\n 😦 - Fear\n 😄 - Surprise",
       quick_replies: [
         {
           "content_type":"text",
-          "title":":)",
+          "title":"😊",
           "payload":"happy",
         },
         {
           "content_type":"text",
-          "title":"2",
-          "payload":":(",
+          "title":"😞",
+          "payload":"sad",
         },
         {
           "content_type":"text",
@@ -469,19 +469,19 @@ function sendPrimaryMessage(recipientId) {
         },
         {
         "content_type":"text",
-        "title":">:P",
+        "title":"😒",
         "payload":"disgust",
         "image_url":"http://cdn.mysitemyway.com/icons-watermarks/simple-green/classic-emoticons/classic-emoticons_unamused-face/classic-emoticons_unamused-face_simple-green_512x512.png"
       },
       {
         "content_type":"text",
-        "title":"=O",
+        "title":"😦",
         "payload":"fear",
         "image_url":"http://www.best4balls.com/media/catalog/product/cache/1/thumbnail/700x/9df78eab33525d08d6e5fb8d27136e95/s/c/scared-face.png"
       },
       {
         "content_type":"text",
-        "title":":D",
+        "title":"😄",
         "payload":"surprise",
         "image_url":"https://cdn.shopify.com/s/files/1/1061/1924/files/Surprised_Face_Emoji.png?9898922749706957214"
       },
