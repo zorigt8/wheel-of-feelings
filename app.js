@@ -427,36 +427,14 @@ function sendPrimaryMessage(recipientId) {
             title: "Primary Feelings",
             subtitle: "Pick one of these primary feelings.",          
             image_url: SERVER_URL + "/assets/primary_feelings.png",
-            buttons: [{
-              type: "postback",
-              title: "Happy",
-              payload: "happy",
-            } 
-            , {
-              type: "postback",
-              title: "Surprised",
-              payload: "surprised",
-            }, {
-              type: "postback",
-              title: "Bad",
-              payload: "bad",
-            }, {
-              type: "postback",
-              title: "Fearful",
-              payload: "fearful",
-            }, {
-              type: "postback",
-              title: "Angry",
-              payload: "angry",
-            }, {
-              type: "postback",
-              title: "Disgusted",
-              payload: "disgusted",
-            }, {
-              type: "postback",
-              title: "Sad",
-              payload: "sad",
-            } ]
+            buttons: [
+               {
+                "type":"web_url",
+                "url":"https://google.com",
+                "title":"Select Criteria",
+                "webview_height_ratio": "compact"
+              }
+            ]
           }]
         }
       }
