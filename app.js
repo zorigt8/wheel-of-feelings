@@ -454,6 +454,11 @@ function sendPrimaryMessage(recipientId) {
       quick_replies: [
         {
           "content_type":"text",
+          "title":"😄",
+          "payload":"surprise",
+        },
+        {
+          "content_type":"text",
           "title":"😊",
           "payload":"happy",
         },
@@ -461,11 +466,6 @@ function sendPrimaryMessage(recipientId) {
           "content_type":"text",
           "title":"😞",
           "payload":"sad",
-        },
-        {
-          "content_type":"text",
-          "title":"😡",
-          "payload":"angry",
         },
         {
         "content_type":"text",
@@ -479,8 +479,8 @@ function sendPrimaryMessage(recipientId) {
       },
       {
         "content_type":"text",
-        "title":"😄",
-        "payload":"surprise",
+        "title":"😡",
+        "payload":"anger",
       }
       ]
     }
