@@ -2,5 +2,5 @@
     "appSecret": "09525ea0210720e1c58cf335785415f2",
     "pageAccessToken": "EAAIRgqv3dQwBAJPXPl3JYZBZBw4zY87baGbgY1hTwdjRiGq858nPcVWQacs4CymLG1qO15nB3tOuy3XitUWGmsb8MGYlsknXpD0zQzMekfVib2EkK0lkDNA8iN0JDrca2ugatD9UZCJZCoknoZAZAcs7RsBLNdVFMZD",
     "validationToken": "zorigt_verify",
-    "serverURL": "ec2-54-183-111-8.us-west-1.compute.amazonaws.com"
+    "serverURL": "https://wheel-of-feelings.herokuapp.com/"
 }
