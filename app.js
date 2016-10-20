@@ -257,6 +257,7 @@ function receivedMessage(event) {
     switch (messageText) {
       case 'primary':
         sendPrimaryMessage(senderID);
+        sendPrimary2Message(senderID);
         break;
 
       case 'image':
@@ -435,7 +436,22 @@ function sendPrimaryMessage(recipientId) {
           "content_type":"text",
           "title":"Disgust",
           "payload":"disgust"
-        },
+        }
+      ]
+    }
+  };
+
+  callSendAPI(messageData);
+}
+
+function sendPrimary2Message(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: "What are you feeling right now?",
+      quick_replies: [
         {
           "content_type":"text",
           "title":"Anger",
