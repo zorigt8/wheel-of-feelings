@@ -255,6 +255,10 @@ function receivedMessage(event) {
     // keywords and send back the corresponding example. Otherwise, just echo
     // the text we received.
     switch (messageText) {
+      case 'primary':
+        sendPrimaryMessage(senderID);
+        break;
+
       case 'image':
         sendImageMessage(senderID);
         break;
@@ -363,7 +367,7 @@ function receivedPostback(event) {
 
   // When a postback is called, we'll send a message back to the sender to 
   // let them know it was successful
-  sendTextMessage(senderID, "Postback called This is cool");
+  sendTextMessage(senderID, "You're feeling %s?", payload);
 }
 
 /*
@@ -402,6 +406,63 @@ function receivedAccountLink(event) {
 
   console.log("Received account link event with for user %d with status %s " +
     "and auth code %s ", senderID, status, authCode);
+}
+
+
+/*
+ * Send primary feelings survey.
+ *
+ */
+function sendPrimaryMessage(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "generic",
+          elements: [{
+            title: "Primary Feelings",
+            subtitle: "Pick one of these primary feelings.",          
+            image_url: SERVER_URL + "/assets/primary_feelings.png",
+            buttons: [{
+              type: "postback",
+              title: "Happy",
+              payload: "happy",
+            }, {
+              type: "postback",
+              title: "Surprised",
+              payload: "surprised",
+            }, {
+              type: "postback",
+              title: "Bad",
+              payload: "bad",
+            }, {
+              type: "postback",
+              title: "Fearful",
+              payload: "fearful",
+            }, {
+              type: "postback",
+              title: "Angry",
+              payload: "angry",
+            }, {
+              type: "postback",
+              title: "Disgusted",
+              payload: "disgusted",
+            }, {
+              type: "postback",
+              title: "Sad",
+              payload: "sad",
+            }]
+          }]
+        }
+      }
+    }
+  };  
+
+  callSendAPI(messageData);
 }
 
 /*
