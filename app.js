@@ -257,7 +257,6 @@ function receivedMessage(event) {
     switch (messageText) {
       case 'primary':
         sendPrimaryMessage(senderID);
-        sendPrimary2Message(senderID);
         break;
 
       case 'image':
