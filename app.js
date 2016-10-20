@@ -450,29 +450,47 @@ function sendPrimaryMessage(recipientId) {
       id: recipientId
     },
     message: {
-      text: "What are you feeling right now?\n > Happy\n > Sad\n > Angry\n > Disgust\n > Fear\n > Surprise",
+      text: "What are you feeling right now?\n 1 - Happy\n 2 - Sad\n 3 - Angry\n 4 - Disgust\n 5 - Fear\n 6 - Surprise",
       quick_replies: [
         {
           "content_type":"text",
-          "title":"Happy",
+          "title":"1",
           "payload":"happy",
           "image_url":"https://cdn4.iconfinder.com/data/icons/proglyphs-signs-and-symbols/512/Smiley-512.png"
         },
         {
           "content_type":"text",
-          "title":"Sad",
+          "title":"2",
           "payload":"sad",
           "image_url":"https://s-media-cache-ak0.pinimg.com/originals/6f/b3/4e/6fb34eacd7fc7cb1135d9d9a41d65d46.jpg"
         },
         {
           "content_type":"text",
-          "title":"Angry",
+          "title":"3",
           "payload":"angry",
           "image_url":"http://www.clipartkid.com/images/7/23-mad-smiley-free-cliparts-that-you-can-download-to-you-computer-and-B6Pbfs-clipart.png"
         },
         {
+        "content_type":"text",
+        "title":"4",
+        "payload":"disgust",
+        "image_url":"http://cdn.mysitemyway.com/icons-watermarks/simple-green/classic-emoticons/classic-emoticons_unamused-face/classic-emoticons_unamused-face_simple-green_512x512.png"
+      },
+      {
+        "content_type":"text",
+        "title":"5",
+        "payload":"fear",
+        "image_url":"http://www.best4balls.com/media/catalog/product/cache/1/thumbnail/700x/9df78eab33525d08d6e5fb8d27136e95/s/c/scared-face.png"
+      },
+      {
+        "content_type":"text",
+        "title":"6",
+        "payload":"surprise",
+        "image_url":"https://cdn.shopify.com/s/files/1/1061/1924/files/Surprised_Face_Emoji.png?9898922749706957214"
+      },
+        {
           "content_type":"text",
-          "title":"Next",
+          "title":"Done",
           "payload":"next",
           "image_url":"https://cdn0.iconfinder.com/data/icons/simple-outlines-1/100/Next-512.png"
         }
