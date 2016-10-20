@@ -419,29 +419,41 @@ function sendPrimaryMessage(recipientId) {
       id: recipientId
     },
     message: {
-      attachment: {
-        type: "template",
-        payload: {
-          template_type: "generic",
-          elements: [{
-            title: "Primary Feelings",
-            subtitle: "Pick one of these primary feelings.",          
-            image_url: SERVER_URL + "/assets/primary_feelings.png",
-            buttons: [
-               {
-                "type":"web_url",
-                "url":"https://google.com",
-                "title":"Select Criteria",
-                "webview_height_ratio": "tall",
-                "messenger_extensions": true,
-                "fallback_url": "https://yahoo.com"  
-              }
-            ]
-          }]
+      text: "What are you feeling right now?",
+      quick_replies: [
+        {
+          "content_type":"text",
+          "title":"Happy",
+          "payload":"happy"
+        },
+        {
+          "content_type":"text",
+          "title":"Sad",
+          "payload":"sad"
+        },
+        {
+          "content_type":"text",
+          "title":"Disgust",
+          "payload":"disgust"
+        },
+        {
+          "content_type":"text",
+          "title":"Anger",
+          "payload":"anger"
+        },
+        {
+          "content_type":"text",
+          "title":"Fear",
+          "payload":"fear"
+        },
+        {
+          "content_type":"text",
+          "title":"Surprise",
+          "payload":"surprise"
         }
-      }
+      ]
     }
-  };  
+  };
 
   callSendAPI(messageData);
 }
