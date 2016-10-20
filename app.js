@@ -367,7 +367,7 @@ function receivedPostback(event) {
 
   // When a postback is called, we'll send a message back to the sender to 
   // let them know it was successful
-  sendTextMessage(senderID, "You're feeling %s?", payload);
+  sendTextMessage(senderID, "You're feeling '%s'?", payload);
 }
 
 /*
@@ -431,7 +431,7 @@ function sendPrimaryMessage(recipientId) {
               type: "postback",
               title: "Happy",
               payload: "happy",
-            } /*
+            } 
             , {
               type: "postback",
               title: "Surprised",
@@ -456,7 +456,7 @@ function sendPrimaryMessage(recipientId) {
               type: "postback",
               title: "Sad",
               payload: "sad",
-            } */]
+            } ]
           }]
         }
       }
