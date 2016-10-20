@@ -450,7 +450,7 @@ function sendPrimaryMessage(recipientId) {
       id: recipientId
     },
     message: { 
-      text: "What are you feeling right now?\n 😊 - Happy\n  😞 - Sad\n 😡 - Angry\n  😒 - Disgust\n 😦 - Fear\n  😄 - Surprise",
+      text: "What are you feeling right now?\n 😊 - Happy\n       😞 - Sad\n 😡 - Angry\n       😒 - Disgust\n 😬 - Fear\n       😄 - Surprise",
       quick_replies: [
         {
           "content_type":"text",
@@ -474,20 +474,14 @@ function sendPrimaryMessage(recipientId) {
       },
       {
         "content_type":"text",
-        "title":"😦",
+        "title":"😬",
         "payload":"fear",
       },
       {
         "content_type":"text",
         "title":"😄",
         "payload":"surprise",
-      },
-        {
-          "content_type":"text",
-          "title":"Done",
-          "payload":"next",
-          "image_url":"https://cdn0.iconfinder.com/data/icons/simple-outlines-1/100/Next-512.png"
-        }
+      }
       ]
     }
   };
