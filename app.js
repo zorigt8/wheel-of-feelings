@@ -633,7 +633,7 @@ function sendButtonMessage(recipientId) {
  * Send a Structured Message (Generic Message type) using the Send API.
  *
  */
-function sendGenericMessage(recipientId) {
+function sendPrimaryMessage(recipientId) {
   var messageData = {
     recipient: {
       id: recipientId
@@ -661,7 +661,7 @@ function sendGenericMessage(recipientId) {
             title: "touch",
             subtitle: "Your Hands, Now in VR",
             item_url: "https://www.oculus.com/en-us/touch/",               
-            image_url: SERVER_URL + "/assets/touch.png",
+            image_url: SERVER_URL + "/assets/primary_feelings.png",
             buttons: [{
               type: "web_url",
               url: "https://www.oculus.com/en-us/touch/",
