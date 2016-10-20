@@ -268,7 +268,7 @@ function receivedMessage(event) {
         happySecondary3Message(senderID);
         break;
 
-      case 'prev':
+      case 'prev_happySecondaryMessage':
         happySecondaryMessage(senderID);
         break;
 
@@ -619,7 +619,7 @@ function happySecondary3Message(recipientId) {
       {
         "content_type":"text",
         "title":"Prev",
-        "payload":"prev",
+        "payload":"prev_happySecondaryMessage",
         "image_url":"https://cdn0.iconfinder.com/data/icons/simple-outlines-1/100/Next-512.png"
       }
       ]
