@@ -273,7 +273,7 @@ function receivedMessage(event) {
         break;
 
       default:
-        sendPrimaryMessage(senderID);
+        sendTextMessage(senderID, quickReplyPayload)
     }
 
     return;
