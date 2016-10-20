@@ -256,10 +256,8 @@ function receivedMessage(event) {
         break;
       
       case 'happy':
-        happySecondary2Message(senderID);
+        happySecondaryMessage(senderID);
         break;
-
-        next_happySecondary2Message
 
       case 'next_happySecondary2Message':
         happySecondary2Message(senderID);
