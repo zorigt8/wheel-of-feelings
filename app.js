@@ -432,7 +432,7 @@ function sendPrimaryMessage(recipientId) {
                 "type":"web_url",
                 "url":"https://google.com",
                 "title":"Select Criteria",
-                "webview_height_ratio": "compact"
+                "webview_height_ratio": "tall"
               }
             ]
           }]
