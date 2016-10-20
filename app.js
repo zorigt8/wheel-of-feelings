@@ -268,7 +268,7 @@ function receivedMessage(event) {
         happySecondary3Message(senderID);
         break;
 
-      case 'next_happySecondaryMessage':
+      case 'prev':
         happySecondaryMessage(senderID);
         break;
 
@@ -526,7 +526,7 @@ function sendPrimary2Message(recipientId) {
  * Send primary feelings survey.
  *
  */
-function happySeconaryMessage(recipientId) {
+function happySecondaryMessage(recipientId) {
   var messageData = {
     recipient: {
       id: recipientId
@@ -619,7 +619,7 @@ function happySecondary3Message(recipientId) {
       {
         "content_type":"text",
         "title":"Prev",
-        "payload":"prev_happySecondaryMessage",
+        "payload":"prev",
         "image_url":"https://cdn0.iconfinder.com/data/icons/simple-outlines-1/100/Next-512.png"
       }
       ]
