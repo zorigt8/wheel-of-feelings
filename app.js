@@ -431,7 +431,8 @@ function sendPrimaryMessage(recipientId) {
               type: "postback",
               title: "Happy",
               payload: "happy",
-            }, {
+            } /*
+            , {
               type: "postback",
               title: "Surprised",
               payload: "surprised",
@@ -455,7 +456,7 @@ function sendPrimaryMessage(recipientId) {
               type: "postback",
               title: "Sad",
               payload: "sad",
-            }]
+            } */]
           }]
         }
       }
@@ -633,7 +634,7 @@ function sendButtonMessage(recipientId) {
  * Send a Structured Message (Generic Message type) using the Send API.
  *
  */
-function sendPrimaryMessage(recipientId) {
+function sendGenericMessage(recipientId) {
   var messageData = {
     recipient: {
       id: recipientId
@@ -661,7 +662,7 @@ function sendPrimaryMessage(recipientId) {
             title: "touch",
             subtitle: "Your Hands, Now in VR",
             item_url: "https://www.oculus.com/en-us/touch/",               
-            image_url: SERVER_URL + "/assets/primary_feelings.png",
+            image_url: SERVER_URL + "/assets/touch.png",
             buttons: [{
               type: "web_url",
               url: "https://www.oculus.com/en-us/touch/",
