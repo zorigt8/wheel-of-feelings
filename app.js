@@ -245,7 +245,8 @@ function receivedMessage(event) {
     console.log("Quick reply for message %s with payload %s",
       messageId, quickReplyPayload);
 
-    sendTextMessage(senderID, "Quick reply tapped");
+    sendTextMessage(senderID, "Quick reply tapped " + quickReplyPayload);
+    
     switch (quickReplyPayload) {
       case 'next':
         sendPrimary2Message(senderID);
