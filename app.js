@@ -480,7 +480,7 @@ function happySecondaryFeelings(recipientId) {
       id: recipientId
     },
     message: {
-      text: "Tell me how happy by picking a number or entering a combination, ie 123 or 8735\n 1 - Optimistic\n 2 - Intimate\n 3 - Peaceful\n 4 - Powerful\n 5 - Accepted\n 6 - Proud\n 7 - Interested\n 8 - Joyful",
+      text: "You feel happy 😊 becuase ...\n\n 1 - Optimistic\t   |   Type the\n 2 - Intimate\t   |   digits\n 3 - Peaceful\t   |   for\n 4 - Powerful\t   |   more than\n 5 - Accepted\t   |   one feeling\n 6 - Proud\t\t   |   248\n 7 - Interested\t   |   or\n 8 - Joyful\t\t   |   12345678\n",
       quick_replies: [
         {
           "content_type":"text",
