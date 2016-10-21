@@ -248,29 +248,9 @@ function receivedMessage(event) {
     sendTextMessage(senderID, "Quick reply tapped " + quickReplyPayload);
     
     switch (quickReplyPayload) {
-      case 'next':
-        sendPrimary2Message(senderID);
-        break;
-
-      case 'prev':
-        sendPrimaryMessage(senderID);
-        break;
       
       case 'happy':
-        happySecondaryMessage(senderID);
-        break;
-
-      case 'next_happySecondary2Message':
-        happySecondary2Message(senderID);
-        break;
-
-
-      case 'next_happySecondary3Message':
-        happySecondary3Message(senderID);
-        break;
-
-      case 'prev_happySecondaryMessage':
-        happySecondaryMessage(senderID);
+        happySecondaryFeelings(senderID);
         break;
 
       default:
@@ -287,7 +267,7 @@ function receivedMessage(event) {
     // the text we received.
     switch (messageText) {
       case 'primary':
-        sendPrimaryMessage(senderID);
+        sendPrimaryFeelings(senderID);
         break;
 
       case 'image':
@@ -444,23 +424,23 @@ function receivedAccountLink(event) {
  * Send primary feelings survey.
  *
  */
-function sendPrimaryMessage(recipientId) {
+function sendPrimaryFeelings(recipientId) {
   var messageData = {
     recipient: {
       id: recipientId
     },
     message: { 
-      text: "If you're feeling a combination of complex emotions; you can type the emojis.\n\n😄 - Surprise\n       😊 - Happy\n              😞 - Sad\n                     😒 - Disgust\n                            😬 - Fear\n                                   😡 - Anger\n",
+      text: "Feeling a combination of complex emotions? Just type the emojis.\n\n😊 - Happy\n       😯 - Surprise\n              😞 - Sad\n                     😒 - Disgust\n                            😬 - Fear\n                                   😡 - Anger",
       quick_replies: [
-        {
-          "content_type":"text",
-          "title":"😄",
-          "payload":"surprise",
-        },
         {
           "content_type":"text",
           "title":"😊",
           "payload":"happy",
+        },
+        {
+          "content_type":"text",
+          "title":"😯",
+          "payload":"surprise",
         },
         {
           "content_type":"text",
@@ -489,78 +469,58 @@ function sendPrimaryMessage(recipientId) {
   callSendAPI(messageData);
 }
 
-function sendPrimary2Message(recipientId) {
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      text: "What are you feeling right now?\n > Happy\n > Sad\n > Angry\n > Disgust\n > Fear\n > Surprise",
-      quick_replies: [
-        {
-        "content_type":"text",
-        "title":"Disgust",
-        "payload":"disgust",
-        "image_url":"http://cdn.mysitemyway.com/icons-watermarks/simple-green/classic-emoticons/classic-emoticons_unamused-face/classic-emoticons_unamused-face_simple-green_512x512.png"
-      },
-      {
-        "content_type":"text",
-        "title":"Fear",
-        "payload":"fear",
-        "image_url":"http://www.best4balls.com/media/catalog/product/cache/1/thumbnail/700x/9df78eab33525d08d6e5fb8d27136e95/s/c/scared-face.png"
-      },
-      {
-        "content_type":"text",
-        "title":"Surprise",
-        "payload":"surprise",
-        "image_url":"https://cdn.shopify.com/s/files/1/1061/1924/files/Surprised_Face_Emoji.png?9898922749706957214"
-      },
-      {
-        "content_type":"text",
-        "title":"Prev",
-        "payload":"prev",
-        "image_url":"https://cdn0.iconfinder.com/data/icons/simple-outlines-1/100/Next-512.png"
-      }
-      ]
-    }
-  };
-
-  callSendAPI(messageData);
-}
-
 
 /*
- * Send primary feelings survey.
+ * Send secondary feelings survey.
  *
  */
-function happySecondaryMessage(recipientId) {
+function happySecondaryFeelings(recipientId) {
   var messageData = {
     recipient: {
       id: recipientId
     },
     message: {
-      text: "How happy are you?\n - Optimistic\n - Intimate\n - Peaceful\n - Powerful\n - Accepted\n - Proud\n - Interested\n - Joyful",
+      text: "Tell me how happy by picking a number or entering a combination, ie 123 or 8735\n 1 - Optimistic\n 2 - Intimate\n 3 - Peaceful\n 4 - Powerful\n 5 - Accepted\n 6 - Proud\n 7 - Interested\n 8 - Joyful",
       quick_replies: [
         {
           "content_type":"text",
-          "title":"Optimistic",
+          "title":"1",
           "payload":"optimistic",
         },
         {
           "content_type":"text",
-          "title":"Intimate",
+          "title":"2",
           "payload":"intimate",
         },
         {
           "content_type":"text",
-          "title":"Peaceful",
+          "title":"3",
           "payload":"peaceful",
         },
         {
           "content_type":"text",
-          "title":"Next",
-          "payload":"next_happySecondary2Message",
-          "image_url":"https://cdn0.iconfinder.com/data/icons/simple-outlines-1/100/Next-512.png"
+          "title":"4",
+          "payload":"powerful",
+        },
+        {
+          "content_type":"text",
+          "title":"5",
+          "payload":"accepted",
+        },
+        {
+          "content_type":"text",
+          "title":"6",
+          "payload":"proud",
+        },
+        {
+          "content_type":"text",
+          "title":"7",
+          "payload":"interested",
+        },
+        {
+          "content_type":"text",
+          "title":"8",
+          "payload":"joyful",
         }
       ]
     }
@@ -569,72 +529,6 @@ function happySecondaryMessage(recipientId) {
   callSendAPI(messageData);
 }
 
-function happySecondary2Message(recipientId) {
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      text: "How happy are you?\n - Optimistic\n - Intimate\n - Peaceful\n - Powerful\n - Accepted\n - Proud\n - Interested\n - Joyful",
-      quick_replies: [
-        {
-        "content_type":"text",
-        "title":"Powerful",
-        "payload":"powerful",
-      },
-      {
-        "content_type":"text",
-        "title":"Accepted",
-        "payload":"accepted",
-      },
-      {
-        "content_type":"text",
-        "title":"Proud",
-        "payload":"proud",
-      },
-      {
-        "content_type":"text",
-        "title":"Next",
-        "payload":"next_happySecondary3Message",
-        "image_url":"https://cdn0.iconfinder.com/data/icons/simple-outlines-1/100/Next-512.png"
-      }
-      ]
-    }
-  };
-
-  callSendAPI(messageData);
-}
-
-function happySecondary3Message(recipientId) {
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      text: "How happy are you?\n - Optimistic\n - Intimate\n - Peaceful\n - Powerful\n - Accepted\n - Proud\n - Interested\n - Joyful",
-      quick_replies: [
-        {
-        "content_type":"text",
-        "title":"Interested",
-        "payload":"interested",
-      },
-      {
-        "content_type":"text",
-        "title":"Joyful",
-        "payload":"joyful",
-      },
-      {
-        "content_type":"text",
-        "title":"Prev",
-        "payload":"prev_happySecondaryMessage",
-        "image_url":"https://cdn0.iconfinder.com/data/icons/simple-outlines-1/100/Next-512.png"
-      }
-      ]
-    }
-  };
-
-  callSendAPI(messageData);
-}
 
 
 /*
