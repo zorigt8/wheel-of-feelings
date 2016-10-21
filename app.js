@@ -450,7 +450,7 @@ function sendPrimaryMessage(recipientId) {
       id: recipientId
     },
     message: { 
-      text: "What are you feeling right now?\n😄 - Surprise\n       😊 - Happy\n              😞 - Sad\n                     😒 - Disgust\n                            😬 - Fear\n                                   😡 - Anger\n",
+      text: "If you're feeling a combination of complex emotions; you can enter the emojis that relate to your emotional state.\n😄 - Surprise\n       😊 - Happy\n              😞 - Sad\n                     😒 - Disgust\n                            😬 - Fear\n                                   😡 - Anger\nClick one of the emojis.",
       quick_replies: [
         {
           "content_type":"text",
