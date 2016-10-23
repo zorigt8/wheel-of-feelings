@@ -272,6 +272,13 @@ function receivedMessage(event) {
         sendPrimaryFeelings(senderID);
         break;
 
+      case 'b':
+      case 'B':
+        primaryButton1(senderID);
+        primaryButton2(senderID);
+
+        break;
+
       case 'button':
         sendButtonMessage(senderID);
         break;
