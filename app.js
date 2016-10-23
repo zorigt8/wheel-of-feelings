@@ -549,7 +549,7 @@ function primaryButton2(recipientId) {
         type: "template",
         payload: {
           template_type: "button",
-          text: "",
+          text: "-",
           buttons:[{
             type: "postback",
             title: " 😒 Disgust",
