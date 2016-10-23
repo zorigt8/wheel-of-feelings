@@ -549,7 +549,7 @@ function primaryButton2(recipientId) {
         type: "template",
         payload: {
           template_type: "button",
-          text: "-",
+          text: " ",
           buttons:[{
             type: "postback",
             title: " 😒 Disgust",
@@ -671,7 +671,7 @@ function sendButtonMessage(recipientId) {
         type: "template",
         payload: {
           template_type: "button",
-          text: "What are you feeling right now?",
+          text: "",
           buttons:[{
             type: "web_url",
             url: "https://www.oculus.com/en-us/rift/",
