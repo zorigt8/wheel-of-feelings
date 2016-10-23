@@ -497,7 +497,72 @@ function happySecondaryFeelings(recipientId) {
   callSendAPI(messageData);
 }
 
+/*
+ * Send a button message using the Send API.
+ *
+ */
+function primaryButton1(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "button",
+          text: "What are you feeling right now?",
+          buttons:[{
+            type: "postback",
+            title: " 😊 Happy",
+            payload: "happy"
+          }, {
+            type: "postback",
+            title: " 😯 Surprise",
+            payload: "surprise"
+          }, {
+            type: "postback",
+            title: " 😞 Sad",
+            payload: "sad"
+          }]
+        }
+      }
+    }
+  };  
 
+  callSendAPI(messageData);
+}
+function primaryButton2(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "button",
+          text: "",
+          buttons:[{
+            type: "postback",
+            title: " 😒 Disgust",
+            payload: "disgust"
+          }, {
+            type: "postback",
+            title: " 😬 Fear",
+            payload: "fear"
+          }, {
+            type: "postback",
+            title: " 😡 Anger",
+            payload: "anger"
+          }]
+        }
+      }
+    }
+  };  
+
+  callSendAPI(messageData);
+}
 
 /*
  * Send an image using the Send API.
