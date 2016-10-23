@@ -354,6 +354,7 @@ function receivedPostback(event) {
 
   // Use this as a summary
   // sendTextMessage(senderID, "You're feeling '%s'?", payload);
+  sendPrimaryFeelings(senderID);
 }
 
 /*
