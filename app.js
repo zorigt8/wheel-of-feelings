@@ -24,6 +24,8 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json({ verify: verifyRequestSignature }));
 app.use(express.static('public'));
 
+var firstAry = [], secondAry = [], thirdAry = [];
+
 /*
  * Be sure to setup your config values before running this code. You can 
  * set them using environment variables or modifying the config file in /config.
@@ -353,7 +355,8 @@ function receivedPostback(event) {
   // let them know it was successful
 
   // Use this as a summary
-  // sendTextMessage(senderID, "You're feeling '%s'?", payload);
+  firstAry.push(payload)
+  sendTextMessage(senderID, firstAry);
   sendPrimaryFeelings(senderID);
 }
 
@@ -550,7 +553,7 @@ function primaryButton2(recipientId) {
         type: "template",
         payload: {
           template_type: "button",
-          text: "\n",
+          text: "Pick as many as you like.",
           buttons:[{
             type: "postback",
             title: " 😒 Disgust",
