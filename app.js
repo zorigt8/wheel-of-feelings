@@ -30,7 +30,8 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json({ verify: verifyRequestSignature }));
 app.use(express.static('public'));
 
-var session.firstAry = [], secondAry = [], thirdAry = [];
+//var session.firstAry = [], 
+var secondAry = [], thirdAry = [];
 
 /*
  * Be sure to setup your config values before running this code. You can 
@@ -373,9 +374,9 @@ function receivedPostback(event) {
       session.firstAry = []
   }
   **/
-  session.firstAry.push(payload)
+  session.firstAry = payload
   secondAry.push(payload)
-  sendTextMessage(senderID, session.firstAry.toString());
+  sendTextMessage(senderID, session.firstAry;
   sendTextMessage(senderID, secondAry.toString());
   //sendPrimaryFeelings(senderID);
 }
