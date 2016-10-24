@@ -16,7 +16,11 @@ const
   crypto = require('crypto'),
   express = require('express'),
   https = require('https'),  
-  request = require('request');
+  request = require('request'),
+  session = require('express-session'),
+  RedisStore = require('connect-redis')(session),
+  redis   = require("redis");
+
 
 var app = express();
 app.set('port', process.env.PORT || 5000);
@@ -57,6 +61,13 @@ if (!(APP_SECRET && VALIDATION_TOKEN && PAGE_ACCESS_TOKEN && SERVER_URL)) {
   console.error("Missing config values");
   process.exit(1);
 }
+
+// Use express session redis
+
+app.use(session({
+    store: new RedisStore(options),
+    secret: 'keyboard cat'
+}));
 
 /*
  * Use your own validation token. Check that the token used in the Webhook 
