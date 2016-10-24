@@ -550,7 +550,7 @@ function primaryButton2(recipientId) {
         type: "template",
         payload: {
           template_type: "button",
-          text: ".........................",
+          text: "\n",
           buttons:[{
             type: "postback",
             title: " 😒 Disgust",
@@ -676,14 +676,14 @@ function sendButtonMessage(recipientId) {
           buttons:[{
             type: "web_url",
             url: "https://www.oculus.com/en-us/rift/",
-            title: "😊 Open Web URL"
+            title: "Open Web URL"
           }, {
             type: "postback",
-            title: " 😊 Trigger Postback",
+            title: " Trigger Postback",
             payload: "DEVELOPED_DEFINED_PAYLOAD"
           }, {
             type: "phone_number",
-            title: "  😊Call Phone Number",
+            title: "Call Phone Number",
             payload: "+16505551234"
           }]
         }
