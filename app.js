@@ -368,9 +368,11 @@ function receivedPostback(event) {
   // let them know it was successful
 
   // Use this as a summary
+  /**
   if (secondAry.lenght == 5) {
       session.firstAry = []
   }
+  **/
   session.firstAry.push(payload)
   secondAry.push(payload)
   sendTextMessage(senderID, session.firstAry.toString());
