@@ -19,7 +19,9 @@ const
   request = require('request'),
   session = require('express-session'),
   RedisStore = require('connect-redis')(session),
-  redis   = require("redis");
+  redis   = require("redis"),
+  client  = redis.createClient();
+;
 
 
 var app = express();
@@ -65,7 +67,7 @@ if (!(APP_SECRET && VALIDATION_TOKEN && PAGE_ACCESS_TOKEN && SERVER_URL)) {
 // Use express session redis
 
 app.use(session({
-    store: new RedisStore({ host: 'localhost', port: 6379, client: client,ttl :  260}),
+    store: new RedisStore({ host: 'https://wheel-of-feelings.herokuapp.com/', port: 6379, client: client,ttl :  260}),
     secret: 'keyboard cat'
 }));
 
