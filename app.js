@@ -356,8 +356,8 @@ function receivedPostback(event) {
 
   // Use this as a summary
   firstAry.push(payload)
-  sendTextMessage(senderID, firstAry);
-  sendPrimaryFeelings(senderID);
+  sendTextMessage(senderID, firstAry.toString());
+  //sendPrimaryFeelings(senderID);
 }
 
 /*
