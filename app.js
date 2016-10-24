@@ -376,7 +376,7 @@ function receivedPostback(event) {
   **/
   session.firstAry = payload
   secondAry.push(payload)
-  sendTextMessage(senderID, session.firstAry;
+  sendTextMessage(senderID, session.firstAry);
   sendTextMessage(senderID, secondAry.toString());
   //sendPrimaryFeelings(senderID);
 }
