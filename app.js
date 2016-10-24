@@ -65,7 +65,7 @@ if (!(APP_SECRET && VALIDATION_TOKEN && PAGE_ACCESS_TOKEN && SERVER_URL)) {
 // Use express session redis
 
 app.use(session({
-    store: new RedisStore(options),
+    store: new RedisStore({ host: 'localhost', port: 6379, client: client,ttl :  260}),
     secret: 'keyboard cat'
 }));
 
