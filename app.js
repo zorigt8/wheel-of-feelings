@@ -21,7 +21,7 @@ const
   RedisStore = require('connect-redis')(session),
   redis   = require("redis"),
   client  = redis.createClient();
-;
+
 
 
 var app = express();
@@ -30,7 +30,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json({ verify: verifyRequestSignature }));
 app.use(express.static('public'));
 
-var firstAry = [], secondAry = [], thirdAry = [];
+var session.firstAry = [], secondAry = [], thirdAry = [];
 
 /*
  * Be sure to setup your config values before running this code. You can 
@@ -368,8 +368,13 @@ function receivedPostback(event) {
   // let them know it was successful
 
   // Use this as a summary
-  firstAry.push(payload)
-  sendTextMessage(senderID, firstAry.toString());
+  if (secondAry.lenght == 5) {
+      session.firstAry = []
+  }
+  session.firstAry.push(payload)
+  secondAry.push(payload)
+  sendTextMessage(senderID, session.firstAry.toString());
+  sendTextMessage(senderID, secondAry.toString());
   //sendPrimaryFeelings(senderID);
 }
 
