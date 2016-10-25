@@ -381,7 +381,7 @@ function receivedPostback(event) {
   secondAry.push(payload)
   sendTextMessage(senderID, session.firstAry);
   sendTextMessage(senderID, secondAry.toString());
-  sendDoneSurvey(senderID);
+  sendDone(senderID);
 }
 
 /*
