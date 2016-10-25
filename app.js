@@ -269,6 +269,9 @@ function receivedMessage(event) {
       case 'happy':
         happySecondaryFeelings(senderID);
         break;
+      case 'done':
+        happySecondaryFeelings(senderID);
+        break;
 
       default:
         sendTextMessage(senderID, quickReplyPayload)
@@ -378,7 +381,7 @@ function receivedPostback(event) {
   secondAry.push(payload)
   sendTextMessage(senderID, session.firstAry);
   sendTextMessage(senderID, secondAry.toString());
-  //sendPrimaryFeelings(senderID);
+  sendDoneSurvey(senderID);
 }
 
 /*
@@ -521,6 +524,26 @@ function happySecondaryFeelings(recipientId) {
           "content_type":"text",
           "title":"8",
           "payload":"joyful",
+        }
+      ]
+    }
+  };
+
+  callSendAPI(messageData);
+}
+
+function sendDone(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: { 
+      text: "Click Done when you finish.",
+      quick_replies: [
+        {
+          "content_type":"text",
+          "title":"Done",
+          "payload":"done",
         }
       ]
     }
