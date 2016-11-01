@@ -32,6 +32,7 @@ app.use(express.static('public'));
 
 //var session.firstAry = [], 
 var secondAry = [], thirdAry = [];
+var isHappy = false
 
 /*
  * Be sure to setup your config values before running this code. You can 
@@ -271,7 +272,8 @@ function receivedMessage(event) {
         break;
 
       default:
-        sendTextMessage(senderID, quickReplyPayload)
+        sendDone(senderID);
+        //sendTextMessage(senderID, quickReplyPayload)
     }
 
     return;
@@ -423,7 +425,7 @@ function sendPrimaryFeelings(recipientId) {
       id: recipientId
     },
     message: { 
-      text: "Feeling something?\n\n😊 - Happy\n       😯 - Surprise\n              😞 - Sad\n                     😒 - Disgust\n                            😬 - Fear\n                                   😡 - Anger",
+      text: "Feeling something?\n\n"+ (isHappy ? "😊" : "✅") +" - Happy\n       😯 - Surprise\n              😞 - Sad\n                     😒 - Disgust\n                            😬 - Fear\n                                   😡 - Anger",
       quick_replies: [
         {
           "content_type":"text",
