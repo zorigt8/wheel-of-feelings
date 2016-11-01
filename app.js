@@ -266,6 +266,9 @@ function receivedMessage(event) {
     sendTextMessage(senderID, "Message typed: " + messageText);
     
     switch (quickReplyPayload) {
+
+      case 'happy':
+        isHappy = true
      
       case 'done':
         happySecondaryFeelings(senderID);
@@ -425,7 +428,7 @@ function sendPrimaryFeelings(recipientId) {
       id: recipientId
     },
     message: { 
-      text: "Feeling something?\n\n"+ (isHappy ? "😊" : "✅") +" - Happy\n       😯 - Surprise\n              😞 - Sad\n                     😒 - Disgust\n                            😬 - Fear\n                                   😡 - Anger",
+      text: "Feeling something?\n\n"+ (isHappy ? "✅":"😊") +" - Happy\n       😯 - Surprise\n              😞 - Sad\n                     😒 - Disgust\n                            😬 - Fear\n                                   😡 - Anger",
       quick_replies: [
         {
           "content_type":"text",
