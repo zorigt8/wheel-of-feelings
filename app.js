@@ -33,6 +33,7 @@ app.use(express.static('public'));
 //var session.firstAry = [], 
 var secondAry = [], thirdAry = [];
 var isHappy = false
+var sendDoneText = "Done, undo or pick more"
 
 /*
  * Be sure to setup your config values before running this code. You can 
@@ -434,7 +435,7 @@ function sendPrimaryFeelings(recipientId) {
       id: recipientId
     },
     message: { 
-      text: "Feeling something?\n\n"+ (isHappy ? "✅":"😊") +" - Happy\n       😯 - Surprise\n              😞 - Sad\n                     😒 - Disgust\n                            😬 - Fear\n                                   😡 - Anger",
+      text: "Feeling something?\n\n"+ (isHappy ? "✅" : "😊") +" - Happy\n       😯 - Surprise\n              😞 - Sad\n                     😒 - Disgust\n                            😬 - Fear\n                                   😡 - Anger",
       quick_replies: [
         {
           "content_type":"text",
@@ -539,7 +540,7 @@ function sendDone(recipientId) {
       id: recipientId
     },
     message: { 
-      text: "Done, undo or pick more",
+      text: sendDoneText,
       quick_replies: [
         {
           "content_type":"text",
@@ -553,7 +554,7 @@ function sendDone(recipientId) {
         },
         {
           "content_type":"text",
-          "title":"Choose more feelings",
+          "title":"Pick more",
           "payload":"more",
         }
       ]
