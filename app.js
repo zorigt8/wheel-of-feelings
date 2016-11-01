@@ -274,6 +274,10 @@ function receivedMessage(event) {
         happySecondaryFeelings(senderID);
         break;
 
+      case 'more':
+        sendPrimaryFeelings(senderID);
+        break;
+
       default:
         sendDone(senderID);
         //sendTextMessage(senderID, quickReplyPayload)
