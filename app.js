@@ -262,8 +262,8 @@ function receivedMessage(event) {
     console.log("Quick reply for message %s with payload %s",
       messageId, quickReplyPayload);
 
-    sendTextMessage(senderID, "Quick reply tapped: " + quickReplyPayload);
-    sendTextMessage(senderID, "Message typed: " + messageText);
+    //sendTextMessage(senderID, "Quick reply tapped: " + quickReplyPayload);
+    //sendTextMessage(senderID, "Message typed: " + messageText);
 
     if(quickReplyPayload == 'happy') {
       isHappy = true
