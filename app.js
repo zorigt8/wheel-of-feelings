@@ -264,11 +264,13 @@ function receivedMessage(event) {
 
     sendTextMessage(senderID, "Quick reply tapped: " + quickReplyPayload);
     sendTextMessage(senderID, "Message typed: " + messageText);
+
+    if(quickReplyPayload == 'happy') {
+      isHappy = true
+    }
+
     
     switch (quickReplyPayload) {
-
-      case 'happy':
-        isHappy = true
      
       case 'done':
         happySecondaryFeelings(senderID);
