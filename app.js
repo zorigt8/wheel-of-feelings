@@ -265,10 +265,7 @@ function receivedMessage(event) {
     sendTextMessage(senderID, "Message typed: " + messageText);
     
     switch (quickReplyPayload) {
-      
-      case 'happy':
-        happySecondaryFeelings(senderID);
-        break;
+     
       case 'done':
         happySecondaryFeelings(senderID);
         break;
@@ -289,13 +286,6 @@ function receivedMessage(event) {
       case 'a':
       case 'A':
         sendPrimaryFeelings(senderID);
-        break;
-
-      case 'b':
-      case 'B':
-        primaryButton1(senderID);
-        primaryButton2(senderID);
-
         break;
 
       case 'button':
@@ -433,38 +423,38 @@ function sendPrimaryFeelings(recipientId) {
       id: recipientId
     },
     message: { 
-      text: "Feeling a combination of emotions? Just type the emojis.\n\n😊 - Happy\n       😯 - Surprise\n              😞 - Sad\n                     😒 - Disgust\n                            😬 - Fear\n                                   😡 - Anger",
+      text: "Feeling something?\n\n😊 - Happy\n       😯 - Surprise\n              😞 - Sad\n                     😒 - Disgust\n                            😬 - Fear\n                                   😡 - Anger",
       quick_replies: [
         {
           "content_type":"text",
           "title":"😊",
-          "payload":"happy",
+          "payload":"primary happy",
         },
         {
           "content_type":"text",
           "title":"😯",
-          "payload":"surprise",
+          "payload":"primary surprise",
         },
         {
           "content_type":"text",
           "title":"😞",
-          "payload":"sad",
+          "payload":"primary sad",
         },
         {
-        "content_type":"text",
-        "title":"😒",
-        "payload":"disgust",
-      },
-      {
-        "content_type":"text",
-        "title":"😬",
-        "payload":"fear",
-      },
-      {
-        "content_type":"text",
-        "title":"😡",
-        "payload":"anger",
-      }
+          "content_type":"text",
+          "title":"😒",
+          "payload":"primary disgust",
+        },
+        {
+          "content_type":"text",
+          "title":"😬",
+          "payload":"primary fear",
+        },
+        {
+          "content_type":"text",
+          "title":"😡",
+          "payload":"primary anger",
+        }
       ]
     }
   };
@@ -538,16 +528,50 @@ function sendDone(recipientId) {
       id: recipientId
     },
     message: { 
-      text: "Click Done when you finish.",
+      text: "Done, undo or pick more",
       quick_replies: [
         {
           "content_type":"text",
           "title":"Done",
           "payload":"done",
+        },
+        {
+          "content_type":"text",
+          "title":"Undo",
+          "payload":"undo",
+        },
+        {
+          "content_type":"text",
+          "title":"Choose more feelings",
+          "payload":"more",
         }
       ]
     }
   };
+
+  callSendAPI(messageData);
+}
+
+function sendDoneButton(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "button",
+          text: "Done?",
+          buttons:[{
+            type: "postback",
+            title: "Done",
+            payload: "done"
+          }]
+        }
+      }
+    }
+  };  
 
   callSendAPI(messageData);
 }
