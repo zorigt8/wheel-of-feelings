@@ -37,7 +37,7 @@ app.use(express.static('public'));
 var secondAry = [], thirdAry = [];
 var isHappy = false;
 var sendDoneText = "Done, undo or pick more";
-var temp;
+var temp, token;
 
 
 /*
