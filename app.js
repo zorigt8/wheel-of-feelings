@@ -20,7 +20,10 @@ const
   session = require('express-session'),
   RedisStore = require('connect-redis')(session),
   redis   = require("redis"),
-  client  = redis.createClient();
+  client  = redis.createClient(),
+  RedisSessions = require("redis-sessions"),
+  rs = new RedisSessions(),
+  rsapp = "emotional-wheel";
 
 
 
@@ -32,12 +35,10 @@ app.use(express.static('public'));
 
 //var session.firstAry = [], 
 var secondAry = [], thirdAry = [];
-var isHappy = false
-var sendDoneText = "Done, undo or pick more"
+var isHappy = false;
+var sendDoneText = "Done, undo or pick more";
+var temp;
 
-client.on("error", function (err) {
-    console.log("Error " + err);
-});
 
 /*
  * Be sure to setup your config values before running this code. You can 
@@ -272,15 +273,37 @@ function receivedMessage(event) {
     //var temp = []
     //temp.push(client.hmget(senderID, 'primary'));
     //temp.push(quickReplyPayload);
-    client.set('primary', 'hello', function (err, res) {
-      console.log("Is it set?!!!! " + res);
+
+    
+    rs.set({
+      app: rsapp,
+      token: temp,
+      d: {
+        "unread_msgs": 12,
+        "last_action": "/read/news",
+        "birthday": "2013-08-13"
+      }},
+      function(err, resp) {
+        /*
+        resp contains the session with the new values:
+     
+        {  
+          "id":"user1001",
+          "r": 1,
+          "w": 2,
+          "idle": 1,
+          "ttl": 7200, 
+          "d":
+            {
+              "foo": "bar",
+              "unread_msgs": 12,
+              "last_action": "/read/news",
+              "birthday": "2013-08-13"
+            }
+        }
+        */  
     });
     secondAry.push(quickReplyPayload);
-    sendDoneText = client.get('primary', function(err, reply) {
-      // reply is null when the key is missing
-      console.log(reply);
-    });
-    console.log("Hash map!!!! " + sendDoneText);
 
     if(quickReplyPayload == 'happy') {
       isHappy = true
@@ -437,7 +460,21 @@ function receivedAccountLink(event) {
  *
  */
 function sendPrimaryFeelings(recipientId) {
-  //client.hmset = (recipientId, 'primary', []);
+  rs.create({
+      app: rsapp,
+      id: recipientId,
+      ttl: 3600,
+      d: { 
+        foo: "bar",
+        unread_msgs: 34
+      }
+      },
+      function(err, resp) {
+        // resp should be something like  
+        // {token: "r30kKwv3sA6ExrJ9OmLSm4Wo3nt9MQA1yG94wn6ByFbNrVWhcwAyOM7Zhfxqh8fe"} 
+        temp = resp.token;
+        console.log("Resp token = " + resp.token);
+  });
 
   var messageData = {
     recipient: {
