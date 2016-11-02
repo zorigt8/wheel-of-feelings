@@ -382,6 +382,7 @@ function receivedPostback(event) {
   client.hmset(senderID, [primary, temp], function (err, res){}); 
   secondAry.push(payload);
   sendDoneText = client.hmget(senderID, primary);
+  console.log("Hash map!!!! " + client.hmget(senderID, primary));
   //sendTextMessage(senderID, session.firstAry);
   //sendTextMessage(senderID, secondAry.toString());
   sendDone(senderID);
