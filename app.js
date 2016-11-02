@@ -267,10 +267,10 @@ function receivedMessage(event) {
     //sendTextMessage(senderID, "Message typed: " + messageText);
     var temp = client.hmget(senderID, primary);
     temp.push(quickReplyPayload);
-    client.hmset(senderID, [primary, temp], function (err, res){}); 
+    client.hmset(senderID, ['primary', temp], function (err, res){}); 
     secondAry.push(quickReplyPayload);
-    sendDoneText = client.hmget(senderID, primary);
-    console.log("Hash map!!!! " + client.hmget(senderID, primary));
+    sendDoneText = client.hmget(senderID, 'primary');
+    console.log("Hash map!!!! " + client.hmget(senderID, 'primary'));
 
     if(quickReplyPayload == 'happy') {
       isHappy = true
@@ -427,7 +427,7 @@ function receivedAccountLink(event) {
  *
  */
 function sendPrimaryFeelings(recipientId) {
-  client.hmset = (recipientID, primary, []);
+  client.hmset = (recipientID, 'primary', []);
 
   var messageData = {
     recipient: {
