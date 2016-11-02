@@ -270,8 +270,11 @@ function receivedMessage(event) {
     //temp.push(quickReplyPayload);
     client.set('primary', quickReplyPayload); 
     secondAry.push(quickReplyPayload);
-    sendDoneText = client.get('primary');
-    console.log("Hash map!!!! " + client.get('primary'));
+    sendDoneText = client.get('primary', function(err, reply) {
+      // reply is null when the key is missing
+      console.log(reply);
+    });
+    console.log("Hash map!!!! " + sendDoneText);
 
     if(quickReplyPayload == 'happy') {
       isHappy = true
