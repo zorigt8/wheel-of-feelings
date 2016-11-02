@@ -35,6 +35,10 @@ var secondAry = [], thirdAry = [];
 var isHappy = false
 var sendDoneText = "Done, undo or pick more"
 
+client.on("error", function (err) {
+    console.log("Error " + err);
+});
+
 /*
  * Be sure to setup your config values before running this code. You can 
  * set them using environment variables or modifying the config file in /config.
