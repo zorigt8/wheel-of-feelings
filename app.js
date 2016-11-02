@@ -446,7 +446,7 @@ function sendPrimaryFeelings(recipientId) {
         // resp should be something like  
         // {token: "r30kKwv3sA6ExrJ9OmLSm4Wo3nt9MQA1yG94wn6ByFbNrVWhcwAyOM7Zhfxqh8fe"} 
         //temp = resp.token;
-        console.log("Resp token = " + resp.token);
+        console.log("Resp token = " + resp);
   });
 
   var messageData = {
