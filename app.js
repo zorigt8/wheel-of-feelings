@@ -265,10 +265,10 @@ function receivedMessage(event) {
 
     //sendTextMessage(senderID, "Quick reply tapped: " + quickReplyPayload);
     //sendTextMessage(senderID, "Message typed: " + messageText);
-    var temp = []
-    temp.push(client.hmget(senderID, 'primary'));
-    temp.push(quickReplyPayload);
-    client.hmset(senderID, ['primary', temp], function (err, res){}); 
+    //var temp = []
+    //temp.push(client.hmget(senderID, 'primary'));
+    //temp.push(quickReplyPayload);
+    client.hmset(senderID, ['primary', quickReplyPayload], function (err, res){}); 
     secondAry.push(quickReplyPayload);
     sendDoneText = client.hmget(senderID, 'primary');
     console.log("Hash map!!!! " + client.hmget(senderID, 'primary'));
