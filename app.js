@@ -265,6 +265,12 @@ function receivedMessage(event) {
 
     //sendTextMessage(senderID, "Quick reply tapped: " + quickReplyPayload);
     //sendTextMessage(senderID, "Message typed: " + messageText);
+    var temp = client.hmget(senderID, primary);
+    temp.push(quickReplyPayload);
+    client.hmset(senderID, [primary, temp], function (err, res){}); 
+    secondAry.push(quickReplyPayload);
+    sendDoneText = client.hmget(senderID, primary);
+    console.log("Hash map!!!! " + client.hmget(senderID, primary));
 
     if(quickReplyPayload == 'happy') {
       isHappy = true
@@ -371,18 +377,7 @@ function receivedPostback(event) {
   // When a postback is called, we'll send a message back to the sender to 
   // let them know it was successful
 
-  // Use this as a summary
-  /**
-  if (secondAry.lenght == 5) {
-      session.firstAry = []
-  }
-  **/
-  var temp = client.hmget(senderID, primary);
-  temp.push(payload)
-  client.hmset(senderID, [primary, temp], function (err, res){}); 
-  secondAry.push(payload);
-  sendDoneText = client.hmget(senderID, primary);
-  console.log("Hash map!!!! " + client.hmget(senderID, primary));
+
   //sendTextMessage(senderID, session.firstAry);
   //sendTextMessage(senderID, secondAry.toString());
   sendDone(senderID);
