@@ -268,7 +268,7 @@ function receivedMessage(event) {
     //var temp = []
     //temp.push(client.hmget(senderID, 'primary'));
     //temp.push(quickReplyPayload);
-    client.set('primary', quickReplyPayload, function (err, res) {
+    client.set('primary', 'hello', function (err, res) {
       console.log("Is it set?!!!! " + res);
     });
     secondAry.push(quickReplyPayload);
