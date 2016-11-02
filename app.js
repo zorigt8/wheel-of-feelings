@@ -428,7 +428,7 @@ function receivedAccountLink(event) {
  *
  */
 function sendPrimaryFeelings(recipientId) {
-  client.hmset = (recipientID, 'primary', []);
+  //client.hmset = (recipientId, 'primary', []);
 
   var messageData = {
     recipient: {
