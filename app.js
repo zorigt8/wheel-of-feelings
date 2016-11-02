@@ -265,7 +265,7 @@ function receivedMessage(event) {
 
     //sendTextMessage(senderID, "Quick reply tapped: " + quickReplyPayload);
     //sendTextMessage(senderID, "Message typed: " + messageText);
-    var temp = client.hmget(senderID, primary);
+    var temp = client.hmget(senderID, 'primary');
     temp.push(quickReplyPayload);
     client.hmset(senderID, ['primary', temp], function (err, res){}); 
     secondAry.push(quickReplyPayload);
