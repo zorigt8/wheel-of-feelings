@@ -268,10 +268,10 @@ function receivedMessage(event) {
     //var temp = []
     //temp.push(client.hmget(senderID, 'primary'));
     //temp.push(quickReplyPayload);
-    client.hset(senderID, ['primary', quickReplyPayload]); 
+    client.set('primary', quickReplyPayload); 
     secondAry.push(quickReplyPayload);
-    sendDoneText = client.hget(senderID, 'primary');
-    console.log("Hash map!!!! " + client.hget(senderID, 'primary'));
+    sendDoneText = client.get('primary');
+    console.log("Hash map!!!! " + client.get('primary'));
 
     if(quickReplyPayload == 'happy') {
       isHappy = true
