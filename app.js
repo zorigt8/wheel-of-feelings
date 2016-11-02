@@ -268,7 +268,9 @@ function receivedMessage(event) {
     //var temp = []
     //temp.push(client.hmget(senderID, 'primary'));
     //temp.push(quickReplyPayload);
-    client.set('primary', quickReplyPayload); 
+    client.set('primary', quickReplyPayload, function (err, res) {
+      console.log("Is it set?!!!! " + res);
+    });
     secondAry.push(quickReplyPayload);
     sendDoneText = client.get('primary', function(err, reply) {
       // reply is null when the key is missing
