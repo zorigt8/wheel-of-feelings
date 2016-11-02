@@ -295,10 +295,6 @@ function receivedMessage(event) {
     // keywords and send back the corresponding example. Otherwise, just echo
     // the text we received.
     switch (messageText) {
-      case 'a':
-      case 'A':
-        sendPrimaryFeelings(senderID);
-        break;
 
       case 'button':
         sendButtonMessage(senderID);
@@ -317,7 +313,9 @@ function receivedMessage(event) {
         break;        
 
       default:
-        sendTextMessage(senderID, messageText);
+        sendPrimaryFeelings(senderID);
+        //sendTextMessage(senderID, messageText);
+
     }
   } else if (messageAttachments) {
     sendTextMessage(senderID, "Message with attachment received");
@@ -379,8 +377,11 @@ function receivedPostback(event) {
       session.firstAry = []
   }
   **/
-  session.firstAry = payload
-  secondAry.push(payload)
+  var temp = client.hmget(senderID, primary);
+  temp.push(payload)
+  client.hmset(senderID, [primary, temp], function (err, res){}); 
+  secondAry.push(payload);
+  sendDoneText = client.hmget(senderID, primary);
   //sendTextMessage(senderID, session.firstAry);
   //sendTextMessage(senderID, secondAry.toString());
   sendDone(senderID);
@@ -430,6 +431,8 @@ function receivedAccountLink(event) {
  *
  */
 function sendPrimaryFeelings(recipientId) {
+  session.senderID = recipientId;
+
   var messageData = {
     recipient: {
       id: recipientId
