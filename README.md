@@ -1,7 +1,7 @@
 
 
-Inline image 2
+https://postimg.org/image/5hd9bcoel/
 
-Inline image 1
+https://s14.postimg.org/gsfwzpv9t/image.png
 
 Inline image 3
